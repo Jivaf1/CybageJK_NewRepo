@@ -1,0 +1,62 @@
+<div class="container">
+  <section class="intro">
+    <div class="bg-image h-100">
+      <div class="mask d-flex align-items-center h-100" style="background-color: #f3f2f2;">
+        <div class="container">
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-12 col-lg-9 col-xl-8">
+              <div class="card" style="border-radius: 1rem;">
+                <div class="row g-0">
+                  <div class="col-md-4 d-none d-md-block">
+                    <img src="https://mdbootstrap.com/img/Photos/Others/sidenav2.jpg" alt="login form" class="img-fluid"
+                      style="border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;" />
+                  </div>
+                  <div class="col-md-8 d-flex align-items-center">
+                    <div class="card-body py-5 px-4 p-md-5">
+<!--  -->
+
+                      <h2 class="text-center p-3">Sign In</h2>
+
+                      <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)"
+                        style="width: 50%; align-content: center">
+                        {{userForm.value | json}} <br>
+                        <div class="formGroup">
+                          <label for="userName">Username : </label>
+                          <input id="userName" type="text" class="form-control" name="userName"
+                            [(ngModel)]="user.userName" #userName="ngModel" required> <br>
+                          <div [hidden]="userName.valid || userName.untouched" class="alert alert-danger"> UserName is
+                            required </div>
+                        </div>
+                        <div class="fromGroup">
+                          <label for="password">Password :</label>
+                          <input id="password" type="text" class="form-control" name="password"
+                            [(ngModel)]="user.password" #password="ngModel" required>
+                          <div [hidden]="password.valid || password.untouched" class="alert alert-danger">Password is
+                            required</div>
+
+                        </div>
+
+
+                        <!-- <div>
+      <label for="Email">Email Id:</label>
+    <input id="Email" type="email"> -->
+                        <p>
+                          <button type="submit" class="btn-primary">Submit</button>
+                        </p>
+
+                        <a class="link float-end" href="#!">Forgot password? Click here.</a>
+
+                      </form>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<br>
